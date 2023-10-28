@@ -1,0 +1,7 @@
+diff -ruN a/dune-project b/dune-project
+--- a/dune-project	2022-10-06 16:24:16.000000000 +0900
++++ b/dune-project	2023-02-02 15:21:04.298849249 +0900
+@@ -1,3 +1,2 @@
+ (lang dune 1.8)
+ (name lablgtk3)
+-(version 3.1.2)

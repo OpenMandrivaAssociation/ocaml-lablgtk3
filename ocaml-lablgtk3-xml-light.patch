@@ -1,0 +1,28 @@
+--- a/tools/introspection/Makefile
++++ b/tools/introspection/Makefile
+@@ -1,12 +1,12 @@
+ OCAMLC=ocamlc
+ OPT=-g -dtypes
+-INCLUDES= -I xml-light xml-light.cma 
++INCLUDES= -I +xml-light
+ GIRA=/usr/share/gir-1.0/Gtk-3.0.gir
+ GIR=Gtk-3.0
+ 
+ all: high check
+ 
+-extract_stubs: extract_prototype.ml xml-light/xml-light.cma
++extract_stubs: extract_prototype.ml
+ 	$(OCAMLC) $(OPT) $(INCLUDES) -o $@ $^
+ 
+ test: extract_stubs
+@@ -17,10 +17,6 @@ check: test
+ 
+ clean:
+ 	rm -f extract_stubs *.annot extract_prototype.cm* ml_stubs.c stubs.ml
+-	$(MAKE) -C xml-light clean
+-
+-xml-light/xml-light.cma:
+-	$(MAKE) -C xml-light
+ 
+ ################################################################
+ 
